@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-
+import AppHeader from './views/common/AppHeader.js'
 
 export default class App extends Component{
 	constructor(){
@@ -10,8 +10,11 @@ export default class App extends Component{
 	}
 	
 	render(){
+		
 		return(
-			<div>首页</div>
+			<div>
+				<AppHeader/>
+			</div>
 		)
 	}
 	
