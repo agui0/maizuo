@@ -5,10 +5,10 @@ module.exports = {
 		filename:"dist/app.js"
 	},
 	module:{
-		loaders:{
+		loaders:[
 			{test:/\.js$/,loader:'babel-loader', exclude:/node_modules/},
-			{test:/\.css&/,loader:'style-loader!css-loader'},
+			{test:/\.css$/,loader:'style-loader!css-loader'},
 			{test:/\.(png|jpg|jpeg|gif|ttf)$/,loader:'file-loader'}
-		}
+		]
 	}
 }
