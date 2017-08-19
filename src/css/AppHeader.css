@@ -6,6 +6,7 @@
 	height:50px;
 	background:black;
 	color:white;
+	z-index: 10;
 }
 
 .header-l{
@@ -23,6 +24,7 @@
 	text-align: center;
 	line-height: 50px;
 	font-weight: 900;
+	color: white;
 }
 .header-r .icon-xiasanjiao-copy{
 	display: inline-block;

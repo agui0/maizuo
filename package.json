@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --port 8080",
-    "build":"webpack --progress -p"
+    "build": "webpack --progress -p"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,8 @@
     "axios": "^0.16.2",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-addons-css-transition-group": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.1.2"
   }
 }

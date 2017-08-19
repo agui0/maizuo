@@ -1,0 +1,48 @@
+#city{
+    background:red;
+}
+.SlideInDown-appear {
+  transform: translateY(-100%)
+}
+
+.SlideInDown-appear.SlideInDown-appear-active {
+  transform: translateY(0%);
+  transition: .3s linear;
+}
+
+#city.page.leave{
+    transform: translateY(-100%);
+    transition: .3s linear;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
