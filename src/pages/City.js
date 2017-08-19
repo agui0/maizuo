@@ -33,7 +33,7 @@ export default class SilderBar extends Component {
 	
 	changeCity(city){	
 		this.setState({className:'leave'});
-		console.log(this.state.className)
+		// console.log(this.state.className)
 
 		setTimeout(()=>{
 			this.state.history.goBack();
