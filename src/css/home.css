@@ -7,4 +7,124 @@
     width:100%;
 }
 
+#home .homeMovie,#home .soonPlaying{
+    width:100%;
+    padding:20px 16px 10px 16px;
+    box-sizing: border-box;
+    background:#eee;
+}
+
+#home .homeMovie ul,#home .soonPlaying ul{
+    width:100%;
+}
+#home .homeMovie ul li,#home .soonPlaying ul li{
+    width:100%;
+    margin-bottom: 15px;
+}
+
+#home .homeMovie .img_box,#home .soonPlaying .img_box{
+    width:100%;   
+}
+
+#home .homeMovie .img_box img,#home .soonPlaying .img_box img{
+    width:100%;   
+}
+
+#home .homeMovie .txt_box{
+    width:100%;
+    background:white;
+    padding:15px 15px 5px;
+    box-sizing: border-box;
+    display: flex;
+}
+#home .soonPlaying .txt_box{
+    width:100%;
+    background:white;
+    padding:10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+#home .homeMovie .txt_box .txt_box_l{
+    flex: 1;
+    font-size: 14px;
+}
+#home .soonPlaying .txt_box .txt_box_l{
+    font-size: 14px;
+    font-weight: 900;
+}
+#home .homeMovie .txt_box .txt_box_r{
+    height:100%;
+    width:40px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+    color:#f40;
+}
+#home .soonPlaying .txt_box .txt_box_r{
+    font-size: 12px;
+    padding-right:30px;
+    color:#f40;
+}
+
+#home .homeMovie .txt_box h4{
+    font-size: 14px;
+}
+#home .homeMovie .txt_box p{
+    font-size: 12px;
+    color:#999;
+}
+
+#home .homeMovie .more_hot{
+    width:100%;
+    padding:16px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#home .homeMovie .more_hot span{
+    display: inline-block;
+    width:40%;
+    padding:6px 0;
+    font-size: 12px;
+    color:#999;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid #999;
+    border-radius: 25px;
+    cursor: pointer;
+}
+#home .soonPlaying{
+    width:100%;
+    border-top: 1px solid #999;
+    position: relative;
+}
+#home .soonPlaying .soonPlayingLabel{
+    width:60px;
+    height:20px;
+    line-height: 20px;
+    border-radius: 4px;
+    font-size: 12px;
+    position:absolute;
+    top:-30px;
+    left:50%;
+    margin-left:-30px;
+    text-align: center;
+    color:white;
+    background:#999;
+    border-top: 1px solid #999;
+    position: relative;
+}
+.more_soonPlaying{
+    width: 160px;
+    height: 30px;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+    margin: 10px auto 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    color: #616161;
+    cursor: pointer;
+}
 

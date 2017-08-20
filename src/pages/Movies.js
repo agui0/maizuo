@@ -11,8 +11,12 @@ export default class SilderBar extends Component {
 	render(){
 		
 		return (
-			<div class="page">
-				影片
+			<div class="page movicesContent">
+				<div>
+					<header>
+						
+					</header>
+				</div>
 			</div>
 			
 		)
