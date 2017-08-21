@@ -40,8 +40,8 @@ export default class App extends Component{
 										  pathname = {location.pathname}
 										  hideHandle = {this.menuHandle.bind(this)} />
 					}} />  
-					<Route path="/" exact component={Home} />
-					<Route path="/movies" component={Movies} />
+					<Route path="/movies" exact component={Home} />
+					<Route path="/" component={Movies} />
 					<Route path="/cinema" component={Cinema} />
 					<Route path="/shop" component={Shop} />
 					<Route path="/city" component={City} />

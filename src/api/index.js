@@ -1,6 +1,6 @@
 //
 const homeBannerApi = '/v4/api/billboard/home'
-//热播中
+//home热播中
 const homeMovieApi = '/v4/api/film/now-playing'
 //即将上映
 const homeSoonPlayingApi = '/v4/api/film/coming-soon'
@@ -9,7 +9,6 @@ export default{
     homeMovieApi,
     homeSoonPlayingApi
 }
-
 
 
 

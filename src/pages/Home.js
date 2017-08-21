@@ -140,13 +140,10 @@ export default class Home extends Component{
 	componentDidMount(){
 		// console.log(this.state.bannerData.length)
 		bannerSwiper = new Swiper (this.refs.banner, {}) 
-
 		myScroll = new IScroll("#home",{
 			probeType:3
 		});
-		
-
-		  
+	  
 	}
 	componentDidUpdate(){
 		setTimeout(()=>{

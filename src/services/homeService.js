@@ -14,11 +14,11 @@ function getHomeBanner(){
     })
 }
 
-function getHomeMovie(){//获取热映中电影
+function getHomeMovie(m=m||1,n=n||5){//获取热映中电影
     return new Promise((resolve,reject)=>{
-        axios.get(`${API.homeMovieApi}?__t=${new Date().getTime()}&page=${1}&count=${5}`)
+        axios.get(`${API.homeMovieApi}?__t=${new Date().getTime()}&page=${m}&count=${n}`)
         .then((res)=>{
-            // console.log(res);
+            console.log(res);
             var newArr = res.data.data.films.map((item)=>{
                 var obj = {};
                 obj.name = item.name;
@@ -29,6 +29,7 @@ function getHomeMovie(){//获取热映中电影
                 obj.grade = item.grade; //影片评分
                 obj.cinemaCount = item.cinemaCount;//影院数量
                 obj.watchCount = item.watchCount; //购票数量
+                obj.poster = item.poster.origin//movices页面影片预览图
                 return obj
             })
             resolve(newArr)
@@ -39,9 +40,9 @@ function getHomeMovie(){//获取热映中电影
     })
 }
 
-function getSoonPlaying(){ //获取即将上映电影
+function getSoonPlaying(m=m||1,n=n||7){ //获取即将上映电影
     return new Promise((resolve,reject)=>{
-        axios.get(`${API.homeSoonPlayingApi}?__t=${new Date().getTime()}&page=${1}&count=${3}`)
+        axios.get(`${API.homeSoonPlayingApi}?__t=${new Date().getTime()}&page=${m}&count=${n}`)
         .then((res)=>{
             console.log(res);
             var newArr = res.data.data.films.map((item)=>{
@@ -55,8 +56,11 @@ function getSoonPlaying(){ //获取即将上映电影
                 var myDate = new Date(item.premiereAt)
                 obj.premiereMonth = myDate.getMonth() +1//上映月份
                 obj.premiereData = myDate.getDate()//上映日
+                var Day = ['星期天','星期一','星期二','星期三','星期四','星期五','星期六',]
+                obj.getDay = Day[myDate.getDay()]//星期几
                 obj.cinemaCount = item.cinemaCount;//影院数量
                 obj.watchCount = item.watchCount; //购票数量
+                obj.poster = item.poster.origin//movices页面影片预览图
                 return obj
             })
             resolve(newArr)
