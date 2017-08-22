@@ -131,7 +131,7 @@ export default class Home extends Component{
 		//请求即将上映电影列表
 		homeService.getSoonPlaying()
 		.then((data)=>{
-			console.log(data);
+			// console.log(data);
 			this.setState({soonPlayingData:data})
 		})
 

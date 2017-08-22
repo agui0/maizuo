@@ -5,12 +5,14 @@ import '../css/movices.css'
 let moviesScroll = null;
 let num1 = 1 ,num2 = 1 ;
 export default class Movices extends Component{
-	constructor(){
+	constructor({history}){
 		super();
+		// console.log(history)
 		this.state = {
 			isShow:true,
 			hotMovieData:[],
-			soonPlayingData:[]
+			soonPlayingData:[],
+			history
 		
 		}
 	}
@@ -32,7 +34,7 @@ export default class Movices extends Component{
 							{
 								data.map((item,index)=>{
 									return(
-										<li key={index}>
+										<li key={index} onClick={this.goDetail.bind(this,item.id)}>
 											<div class="img_box">
 												<img src={item.poster} alt="点击进入详情"/>
 											</div>
@@ -66,19 +68,24 @@ export default class Movices extends Component{
 		this.setState({isShow:false})
 	}
 
+	goDetail(id){
+		// console.log(this.props.location)
+		this.state.history.push('/detial/'+id);
+	}
+
 	componentWillMount(){
 		//请求热映中电影列表
 		homeService.getHomeMovie(num1,7)
 		.then((data)=>{
 			// console.log(data);
-			console.log(88888888)
+			// console.log(88888888)
 			this.setState({hotMovieData:data})
 		})
 		
 		//请求即将上映电影列表
 		homeService.getSoonPlaying(num2,7)
 		.then((data)=>{
-			console.log(data);
+			// console.log(data);
 			this.setState({soonPlayingData:data})
 		})
 
@@ -88,27 +95,28 @@ export default class Movices extends Component{
 			probeType:3
 		});
 		moviesScroll.on('scrollEnd',()=>{
-			if((this.state.isShow)&&moviesScroll.y==moviesScroll.maxScrollY){
+			if((this.state.isShow)&&Math.floor(moviesScroll.y)==Math.floor(moviesScroll.maxScrollY)){
 				num1+=1;
 
 				//请求热映中电影列表
 				homeService.getHomeMovie(num1,7)
 				.then((data)=>{
-					console.log(88888888)
+					// console.log(88888888)
 					this.setState({hotMovieData:this.state.hotMovieData.concat(data)})
 				})			
-				console.log('加载更多');				
-			}else if((!this.state.isShow)&&moviesScroll.y==moviesScroll.maxScrollY){
+				// console.log('加载更多');				
+			}else if((!this.state.isShow)&&Math.floor(moviesScroll.y)==Math.floor(moviesScroll.maxScrollY)){
 				num2+=1;
 				//请求即将上映电影列表
+				
 				homeService.getSoonPlaying(num2,7)
 				.then((data)=>{
-					console.log(1111);
+					// console.log(1111);
 					this.setState({soonPlayingData:this.state.soonPlayingData.concat(data)})
 				})
 			}
 			moviesScroll.refresh();
-			console.log(moviesScroll.y);
+			// console.log(moviesScroll.y);
 			
 		})
 	

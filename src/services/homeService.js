@@ -18,7 +18,7 @@ function getHomeMovie(m=m||1,n=n||5){//获取热映中电影
     return new Promise((resolve,reject)=>{
         axios.get(`${API.homeMovieApi}?__t=${new Date().getTime()}&page=${m}&count=${n}`)
         .then((res)=>{
-            console.log(res);
+            //console.log(res);
             var newArr = res.data.data.films.map((item)=>{
                 var obj = {};
                 obj.name = item.name;
@@ -44,7 +44,7 @@ function getSoonPlaying(m=m||1,n=n||7){ //获取即将上映电影
     return new Promise((resolve,reject)=>{
         axios.get(`${API.homeSoonPlayingApi}?__t=${new Date().getTime()}&page=${m}&count=${n}`)
         .then((res)=>{
-            console.log(res);
+            // console.log(res);
             var newArr = res.data.data.films.map((item)=>{
                 var obj = {};
                 obj.name = item.name;

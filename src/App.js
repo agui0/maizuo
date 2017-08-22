@@ -10,6 +10,7 @@ import Me from './pages/Me.js'
 import Movies from './pages/Movies.js'
 import Card from './pages/Card.js'
 import Shop from './pages/Shop.js'
+import Detail from './pages/Detail.js'
 
 
 import './css/App.css'
@@ -34,20 +35,20 @@ export default class App extends Component{
 				<div>
 					<AppHeader title={this.state.headerTitle} menuHandle={this.menuHandle.bind(this)} City={this.changeCity.bind(this)}/>
 					<Route path='/' render = {({history,location})=>{
-						console.log(location)
+						{/* console.log(location) */}
 						return <SilderBar history = {history} 
 										  show = {this.state.showBar}
 										  pathname = {location.pathname}
 										  hideHandle = {this.menuHandle.bind(this)} />
 					}} />  
-					<Route path="/movies" exact component={Home} />
-					<Route path="/" component={Movies} />
+					<Route path="/" exact component={Home} />
+					<Route path="/movies" component={Movies} />
 					<Route path="/cinema" component={Cinema} />
 					<Route path="/shop" component={Shop} />
 					<Route path="/city" component={City} />
 					<Route path="/card" component={Card} />
 					<Route path="/me" component={Me} />
-					
+					<Route path="/detial/:id" component={Detail} />					 
 				</div>
 			</Router>	
 		)

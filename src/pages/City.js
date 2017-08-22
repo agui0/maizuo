@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import cityService from '../services/cityService.js'
 import '../css/city.css'
 export default class SilderBar extends Component {
 	constructor({history}){
@@ -38,9 +39,16 @@ export default class SilderBar extends Component {
 		setTimeout(()=>{
 			this.state.history.goBack();
 		},300)
+
+		
 	}
 
-
+	componentWillMount(){
+		cityService.getCity()
+		.then((res)=>{
+			console.log(res)
+		})
+	}
 
 	
 }
