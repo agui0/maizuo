@@ -11,6 +11,7 @@ import Movies from './pages/Movies.js'
 import Card from './pages/Card.js'
 import Shop from './pages/Shop.js'
 import Detail from './pages/Detail.js'
+import cinemaDetail from './pages/cinemaDetail.js'
 
 
 import './css/App.css'
@@ -49,6 +50,7 @@ export default class App extends Component{
 					<Route path="/card" component={Card} />
 					<Route path="/me" component={Me} />
 					<Route path="/detial/:id" component={Detail} />					 
+					<Route path="/cinemaDetail/:id" component={cinemaDetail} />					 
 				</div>
 			</Router>	
 		)

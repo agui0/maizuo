@@ -1,0 +1,62 @@
+.cinema{
+    overflow: auto;
+    background:#eee;
+}
+.district .title {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    padding-left: 16px;
+    background: #e1e1e1;
+    margin-bottom: 1px;
+    color: #636363;
+    cursor: pointer;
+    font-weight: 100;
+}
+.district ul{
+    background:#fff;
+}
+.district ul li{
+    border-bottom: 1px solid #636363;
+    padding: 10px 0 12px 16px;
+    cursor: pointer;
+}
+.district ul li h4 {
+    font-size: 16px;
+    color:#333;
+    line-height: 24px;
+    font-weight: 100;
+    font-family: "微软雅黑";
+    margin-bottom:10px;
+}
+.district ul li h4 span{
+    color:#636363;
+    line-height: 24px;
+    padding-right: 15px;
+    float: right;
+}
+.district ul li p{
+   font-size:12px;
+   color:#999;
+   height:24px;
+   line-height: 24px;
+}
+.district ul li p span{
+    display: inline-block;
+    border-radius: 3px;
+    padding:0 4px;
+    height:16px;
+    font-size:12px;
+    color:#fff;
+    line-height: 16px;
+    margin-right:6px;
+}
+.district ul li p .SUNDRY{
+    background-color: #51add0;
+}
+.district ul li p .DISCOUNT{
+    background-color: #ff9658;
+}
+.district ul li p .REFUNDABLE_SEAT_TICKET{
+    background-color: #d00;
+}

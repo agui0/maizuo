@@ -1,0 +1,94 @@
+
+.img_box,.content {
+    width:100%;
+
+}
+
+.content dl{
+    display: flex;
+    padding: 25px 17px 0;
+    background-color: #f9f9f9;
+}
+.content dl dt{
+    width:60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+.content dl dt i{
+    font-size: 30px;
+    color:#f40;
+}
+.content dl dd {
+    flex: 1;
+    border-bottom: 1px dashed #999;
+    padding-bottom: 25px;
+
+}
+.content dl dd h4{
+    font-size: 15px;
+    color: #000;
+    line-height: 34px;
+    width:100%;
+}
+.content dl dd h4 span{
+    display: inline-block;
+    width:94px;
+    height:34px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    color: #fff;
+    line-height: 34px;
+    border-radius: 17px;
+    background:#f40;
+    float: right;
+
+}
+.content dl dd h4 span.active{
+    display: inline-block;
+    width:94px;
+    height:34px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    color: #f40;
+    line-height: 34px;
+    border-radius: 17px;
+    background:#fff;
+    border:1px solid #f40;
+    float: right;
+
+}
+.content dl dd  p{
+    font-size: 12px;
+    color:#999;
+}
+footer{
+    border-top:20px solid #999;
+}
+footer ul{
+    padding:20px 0;
+    display: flex;
+    background-color: #f9f9f9;
+    
+}
+
+footer ul li{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+footer ul li span.iconfont{
+    font-size: 30px;
+}
+footer ul li i{
+    font-style: normal;
+    font-size: 12px;
+    color:#999;
+    line-height: 24px;
+}
