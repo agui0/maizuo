@@ -7,6 +7,7 @@ function getMoviesDetail(id){
         .then((res)=>{   
             var item = res.data.data.film;  
             var obj = {};
+            console.log(res)
             obj.img_path = item.cover.origin;//图片
             obj.director = item.director;//导演
             var arr = [];

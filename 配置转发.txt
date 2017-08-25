@@ -1,0 +1,12 @@
+	// Init express server
+	const app = this.app = new express();
+
+	app.all("*", (req, res, next) => {
+		if(this.checkHost(req.headers))
+			return next();
+		res.send("Invalid Host header");
+	});
+	app.use('/v4',httpProxyMiddleware({
+		target:'http://m.maizuo.com',
+		changeOrigin:true
+	}))

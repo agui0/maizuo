@@ -50,7 +50,7 @@ export default class SilderBar extends Component {
 								{
 									this.state.data.map((item,index)=>{
 										return(
-											<li key={index}>
+											<li key={index} style={item.List.length>=1?{display:"block"}:{display:"none"}}>
 												{item.Start}
 											</li>
 										)
@@ -58,6 +58,26 @@ export default class SilderBar extends Component {
 								}
 								
 							</ul>
+							{
+								this.state.data.map((item,index)=>{
+									return(
+										<div key={index}>
+											<h3 style={item.List.length>=1?{display:"block"}:{display:"none"}}>{item.Start}</h3>
+											<ul>
+												{
+													item.List.map((item2,index2)=>{
+														return(
+															<li key={index2} style={item.List.length>=1?{display:"block"}:{display:"none"}}>
+																{item2.name}
+															</li>
+														)
+													})
+												}
+											</ul>
+										</div>
+									)
+								})
+							}
 						</div>
 					</div>	
 
@@ -80,6 +100,7 @@ export default class SilderBar extends Component {
 	componentWillMount(){//组件创建前
 		cityService.getCity()//请求城市数据
 		.then((data)=>{
+			console.log(data)
 			this.setState({data});
 		})
 		.catch((error)=>{

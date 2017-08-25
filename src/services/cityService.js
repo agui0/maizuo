@@ -6,7 +6,7 @@ function getCity(){
     return new Promise ((resolve,reject)=>{
         axios.get(`${API.cityApi}?__t=${new Date().getTime()}`)
         .then((res)=>{
-            console.log(res)
+            // console.log(res)
             var arr = res.data.data.cities;
             var arrStart = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","P","W","X","Y","Z"]
             var newArr = arrStart.map((item)=>{
