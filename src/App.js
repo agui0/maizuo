@@ -42,13 +42,13 @@ export default class App extends Component{
 										  pathname = {location.pathname}
 										  hideHandle = {this.menuHandle.bind(this)} />
 					}} />  
-					<Route path="/me" exact component={Home} />
+					<Route path="/" exact component={Home} />
 					<Route path="/movies" component={Movies} />
 					<Route path="/cinema" component={Cinema} />
 					<Route path="/shop" component={Shop} />
 					<Route path="/city" component={City} />
 					<Route path="/card" component={Card} />
-					<Route path="/" component={Me} />
+					<Route path="/me" component={Me} />
 					<Route path="/detial/:id" component={Detail} />					 
 					<Route path="/cinemaDetail/:id" component={cinemaDetail} />					 
 				</div>

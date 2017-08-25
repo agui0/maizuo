@@ -7,7 +7,8 @@ export default class SilderBar extends Component {
 		super();
 		this.state = {
 			className : '',
-			history
+			history,
+			data:[]
 		}
 	}
 	
@@ -23,10 +24,43 @@ export default class SilderBar extends Component {
 				transitionLeave={false}
 			>
 				<div  id="city" class={'page '+this.state.className}>
-					<button onClick={this.changeCity.bind(this,'北京')}>北京</button>
+					{/* <button onClick={this.changeCity.bind(this,'北京')}>北京</button>
 					<button onClick={this.changeCity.bind(this,'上海')}>上海</button>
 					<button onClick={this.changeCity.bind(this,'广州')}>广州</button>
-					<button onClick={this.changeCity.bind(this,'深圳')}>深圳</button>
+					<button onClick={this.changeCity.bind(this,'深圳')}>深圳</button> */}
+					<div class="city_all">
+						<div class="position_city">
+							<h3>GPS定位你所在的城市</h3>
+							<ul>
+								<li class="active">深圳</li>
+							</ul>
+						</div>
+						<div class="hot_city">
+							<h3>热门城市</h3>
+							<ul>
+								<li class="active">北京</li>
+								<li class="active">上海</li>
+								<li class="active">广州</li>
+								<li class="active">深圳</li>
+							</ul>
+						</div>
+						<div>
+							<h3>按字母排序</h3>
+							<ul>
+								{
+									this.state.data.map((item,index)=>{
+										return(
+											<li key={index}>
+												{item.Start}
+											</li>
+										)
+									})
+								}
+								
+							</ul>
+						</div>
+					</div>	
+
 				</div>
 			</ReactCSSTransitionGroup>
 		)
@@ -43,10 +77,13 @@ export default class SilderBar extends Component {
 		
 	}
 
-	componentWillMount(){
-		cityService.getCity()
-		.then((res)=>{
-			console.log(res)
+	componentWillMount(){//组件创建前
+		cityService.getCity()//请求城市数据
+		.then((data)=>{
+			this.setState({data});
+		})
+		.catch((error)=>{
+			console.log(error)
 		})
 	}
 

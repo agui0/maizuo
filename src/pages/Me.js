@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import '../css/me.css'
-export default class SilderBar extends Component {
+export default class Me extends Component {
 	constructor(){
 		super();
 		this.state = {
@@ -25,6 +25,19 @@ export default class SilderBar extends Component {
 					</div>
 					<div class="login_btn">登录</div>
 				</div>
+				<div>
+					<div>
+						<img src="" />
+						<div>
+							
+						</div>
+					</div>	
+				</div>
+
+
+
+
+
 			</div>
 			
 		)
