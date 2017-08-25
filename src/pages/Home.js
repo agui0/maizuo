@@ -148,7 +148,7 @@ export default class Home extends Component{
 	componentDidUpdate(){
 		setTimeout(()=>{
 			myScroll.refresh();
-		},2000)
+		},800)
 		
 	}
 

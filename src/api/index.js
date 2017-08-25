@@ -19,7 +19,12 @@ const cinemaDetail = '/v4/api/cinema/'
 //请求城市
 const cityApi = '/v4/api/city'
 
-
+//请求商城列表数据
+//http://aura.maizuo.com/api/ad/list
+const shopList = '/api/ad/list'
+//好货精选
+//http://aura.maizuo.com/api/recommend/home?page=1&num=20
+const shopSift = '/api/recommend/home?page='
 
 export default{
     homeBannerApi,
@@ -28,7 +33,9 @@ export default{
     cityApi,
     moviesDetail,
     cinema,
-    cinemaDetail
+    cinemaDetail,
+    shopList,
+    shopSift
 }
 
 
