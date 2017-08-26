@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import {BrowserRouter as Router,Link,Route} from 'react-router-dom'
 import AppHeader from './views/common/AppHeader.js'
 import SilderBar from './views/common/SilderBar.js'
-
+import Store from './store'
 import Home from './pages/Home.js'
 import Cinema from './pages/Cinema.js'
 import City from './pages/City.js'
@@ -42,11 +42,11 @@ export default class App extends Component{
 										  pathname = {location.pathname}
 										  hideHandle = {this.menuHandle.bind(this)} />
 					}} />  
-					<Route path="/city" exact component={Home} />
+					<Route path="/" exact component={Home} />
 					<Route path="/movies" component={Movies} />
 					<Route path="/cinema" component={Cinema} />
 					<Route path="/shop" component={Shop} />
-					<Route path="/" component={City} />
+					<Route path="/city" component={City} />
 					<Route path="/card" component={Card} />
 					<Route path="/me" component={Me} />
 					<Route path="/detial/:id" component={Detail} />					 

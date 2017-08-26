@@ -1,5 +1,11 @@
+
 #city{
     background:#eee;
+    overflow: hidden;
+}
+
+#city .city_scroll{
+  width:100%;
 }
 .SlideInDown-appear {
   transform: translateY(-100%)

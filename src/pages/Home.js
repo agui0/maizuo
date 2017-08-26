@@ -12,9 +12,9 @@ export default class Home extends Component{
 		this.state = {
 			bannerData:[],
 			homeMovieData:[],
-			soonPlayingData:[]
-			
+			soonPlayingData:[]			
 		}
+		this._isMounted = true;
 	}
 
 	render(){
@@ -111,7 +111,7 @@ export default class Home extends Component{
 		homeService.getHomeBanner()
 		.then((data)=>{
 			// console.log(data)
-			if(data){
+			if(data&&this._isMounted){
 				this.setState({bannerData:data});
 				bannerSwiper.update();
 			}
@@ -125,14 +125,20 @@ export default class Home extends Component{
 		homeService.getHomeMovie()
 		.then((data)=>{
 			// console.log(data);
-			this.setState({homeMovieData:data})
+			if(this._isMounted){
+				this.setState({homeMovieData:data})
+			}
+			
 		})
 		
 		//请求即将上映电影列表
 		homeService.getSoonPlaying()
 		.then((data)=>{
 			// console.log(data);
-			this.setState({soonPlayingData:data})
+			if(this._isMounted){
+				this.setState({soonPlayingData:data})
+			}
+			
 		})
 
 	}
@@ -152,7 +158,9 @@ export default class Home extends Component{
 		
 	}
 
-
+	componentWillUnmount(){
+		this._isMounted = false;
+	}
 
 }
 

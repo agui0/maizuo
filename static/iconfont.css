@@ -40,4 +40,4 @@
 
 .icon-dianyingpiao1:before { content: "\e618"; }
 
-.icon-xiasanjiao-copy:before { content: "\e632"; }
+.icon-xiasanjiao-copy:after { content: "\e632"; }

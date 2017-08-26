@@ -2,6 +2,7 @@ import axios from 'axios'
 import API from '../api'
 
 function getMoviesDetail(id){
+    console.log(id)
     return new Promise ((resolve,reject)=>{
         axios.get(`${API.moviesDetail}${id}?__t=${new Date().getTime()}`)
         .then((res)=>{   

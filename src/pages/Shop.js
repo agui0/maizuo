@@ -74,7 +74,7 @@ export default class Shop extends Component {
 										</div>
 										<div class="list_detail_a">
 											{
-												item.products.map((val,index2)=>{
+												item.products?item.products.map((val,index2)=>{
 													return(
 														<div key={index2} class="detail_img_box">
 															<img src={val.image} />
@@ -83,7 +83,7 @@ export default class Shop extends Component {
 														</div>
 													)
 													
-												})
+												}):null
 											}
 											<div></div>
 										</div>
@@ -152,9 +152,13 @@ export default class Shop extends Component {
 		shopsScroll = new IScroll(this.refs.shopScroll,{//初始化滚动视图
 			probeType:3
 		});
-		
+		shopsScroll.refresh();
 	}	
 
+	componentDidUpdata(){
+		console.log(888)
+		shopsScroll.refresh();
+	}
 	
 }
 

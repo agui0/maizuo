@@ -39,7 +39,7 @@ export default class Detail extends Component{
     }
     componentWillMount(){
         
-        moviesDetailService.getMoviesDetail()
+        moviesDetailService.getMoviesDetail(this.state.id)
         .then((data)=>{
             this.setState({data:data})
         })
