@@ -102,7 +102,7 @@ export default class City extends Component {
 		})
 
 		setTimeout(()=>{
-			this.state.history.goBack();
+			this.state.history.goBack();//点击城市延时0.3s返回原来的页面
 		},300)
 
 		

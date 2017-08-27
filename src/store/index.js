@@ -1,6 +1,6 @@
 import {createStore} from 'redux'
 
-console.log(createStore);
+// console.log(createStore);
 
 let reducer = function(state,action){
     // console.log(state)

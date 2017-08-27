@@ -5,14 +5,14 @@ import '../css/movices.css'
 let moviesScroll = null;
 let num1 = 1 ,num2 = 1 ;
 export default class Movices extends Component{
-	constructor({history}){
+	constructor({history,match}){
 		super();
-		// console.log(history)
 		this.state = {
 			isShow:true,
 			hotMovieData:[],
 			soonPlayingData:[],
-			history
+			history,
+			match
 		
 		}
 	}
@@ -73,7 +73,10 @@ export default class Movices extends Component{
 		this.state.history.push('/detial/'+id);
 	}
 
-	componentWillMount(){
+	componentWillMount(){		
+		if(this.state.match.params.active=="soon"){
+			this.setState({isShow:false})
+		}
 		//请求热映中电影列表
 		homeService.getHomeMovie(num1,7)
 		.then((data)=>{
@@ -88,6 +91,7 @@ export default class Movices extends Component{
 			// console.log(data);
 			this.setState({soonPlayingData:data})
 		})
+		// this.setState({isShow:this.match.params.active})
 
 	}
 	componentDidMount(){		

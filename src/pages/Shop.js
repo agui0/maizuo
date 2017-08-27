@@ -153,12 +153,26 @@ export default class Shop extends Component {
 			probeType:3
 		});
 		shopsScroll.refresh();
+		var page = 1;
+		shopsScroll.on('scrollEnd',()=>{ //到底了
+			if(Math.floor(shopsScroll.y)==Math.floor(shopsScroll.maxScrollY)){
+				page+=1;
+
+				//请求更多数据
+				shopService.getSiftList(page)
+				.then((data)=>{
+					this.setState({siftData:this.state.siftData.concat(data)})
+				})						
+			}
+			shopsScroll.refresh();
+			
+		})
+
+
+
+
 	}	
 
-	componentDidUpdata(){
-		console.log(888)
-		shopsScroll.refresh();
-	}
 	
 }
 

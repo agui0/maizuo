@@ -33,7 +33,7 @@ export default class App extends Component{
 		
 		return(
 			<Router>
-				<div>
+				<div id="all_component">
 					<AppHeader title={this.state.headerTitle} menuHandle={this.menuHandle.bind(this)} City={this.changeCity.bind(this)}/>
 					<Route path='/' render = {({history,location})=>{
 						{/* console.log(location) */}
@@ -44,14 +44,17 @@ export default class App extends Component{
 					}} />  
 					<Route path="/" exact component={Home} />
 					<Route path="/movies" component={Movies} />
+					<Route path="/movies/:active" component={Movies} />
 					<Route path="/cinema" component={Cinema} />
 					<Route path="/shop" component={Shop} />
 					<Route path="/city" component={City} />
 					<Route path="/card" component={Card} />
 					<Route path="/me" component={Me} />
 					<Route path="/detial/:id" component={Detail} />					 
-					<Route path="/cinemaDetail/:id" component={cinemaDetail} />					 
+					<Route path="/cinemaDetail/:id" component={cinemaDetail} />	
+					<div class="go_top_btn icon-huidaodingbu iconfont"></div>				 
 				</div>
+				
 			</Router>	
 		)
 	}

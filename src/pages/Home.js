@@ -7,12 +7,13 @@ import '../css/home.css'
 let bannerSwiper = null;
 let myScroll = null;
 export default class Home extends Component{
-	constructor(){
+	constructor({history}){
 		super();
 		this.state = {
 			bannerData:[],
 			homeMovieData:[],
-			soonPlayingData:[]			
+			soonPlayingData:[],
+			history			
 		}
 		this._isMounted = true;
 	}
@@ -41,7 +42,7 @@ export default class Home extends Component{
 							{
 								this.state.homeMovieData.map((item,index)=>{
 									return(
-										<li key={index} >
+										<li key={index} onClick={this.goDetail.bind(this,item.id)}>
 											<div class="img_box">
 												<img src={item.img_path} />
 											</div>
@@ -60,8 +61,8 @@ export default class Home extends Component{
 							}
 						</ul>
 						
-						<div class="more_hot">
-							<span onClick={this.getMore_Hot.bind(this)}>更多热映电影</span>
+						<div class="more_hot">							
+							<span onClick={this.getMore_Hot.bind(this)}>更多热映电影</span>						
 						</div>	
 					</div>
 
@@ -71,7 +72,7 @@ export default class Home extends Component{
 							{
 								this.state.soonPlayingData.map((item,index)=>{
 									return(
-										<li key={index}>
+										<li key={index} onClick={this.goDetail.bind(this,item.id)}>
 											<div class="img_box">
 												<img src={item.img_path} />
 											</div>
@@ -84,10 +85,9 @@ export default class Home extends Component{
 								})
 							}
 						</ul>
-						<div class="more_soonPlaying" onClick={this.getMore_soonPlaying.bind(this)}>
-							更多即将上映电影
-						</div>
-					
+							<div class="more_soonPlaying" onClick={this.getMore_soonPlaying.bind(this)}>
+								更多即将上映电影
+							</div>					
 					</div>			
 
 
@@ -100,18 +100,21 @@ export default class Home extends Component{
 	
 
 	getMore_Hot(){
-		
+		this.state.history.push("/movies/"+"hot")//跳转到正在热映
 	}
 	getMore_soonPlaying(){
-		
+		this.state.history.push("/movies/"+"soon")//跳转到即将上映
 	}
-
+	goDetail(id){
+		this.state.history.push('/detial/'+id);//跳转到影片详情
+	}
 	componentWillMount(){
+		
 		//请求轮播数据
 		homeService.getHomeBanner()
 		.then((data)=>{
 			// console.log(data)
-			if(data&&this._isMounted){
+			if(data&&this._isMounted){//判断组件是否销毁  否set banner数据
 				this.setState({bannerData:data});
 				bannerSwiper.update();
 			}
